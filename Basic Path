@@ -1,0 +1,26 @@
+Here is a very basic graph to show the paths ofthe two graphs. Now we just need to add the contour colours in the correct places and then add the two different types of points depending on if the bats are chasing or if they are parrrallel.
+
+
+
+
+% Load data
+data = readtable('bat_pair_tracks/trajectory_32.txt');
+
+% Extracting data for bat A and bat B
+ax = table2array(data(:, 2));
+ay = table2array(data(:, 3));
+bx = table2array(data(:, 4));
+by = table2array(data(:, 5));
+
+% Plot paths of bat A and bat B using dots
+figure;
+scatter(ax, ay, 10, 'b', 'filled'); % Scatter plot of bat A's trajectory in blue
+hold on;
+scatter(bx, by, 10, 'r', 'filled'); % Scatter plot of bat B's trajectory in red
+
+xlabel('X');
+ylabel('Y');
+title('Paths of Bat A and Bat B');
+legend('Bat A', 'Bat B');
+grid on;
+hold off;
